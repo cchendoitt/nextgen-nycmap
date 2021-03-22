@@ -1,0 +1,29 @@
+body {
+  margin: 0;  
+  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
+    'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
+    sans-serif;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+.ol-zoom button {
+  position: fixed;
+  left: 5px;
+  width: 35px;
+  height: 35px;
+  font-size: 28px;
+  font-weight: bold;
+  color: #fff;
+  background-color: #000;
+  border: 1px solid #fff;
+}
+.ol-zoom-in {
+  top: 5px;
+}
+.ol-zoom-out {
+  top: 45px;
+}
+.ol-rotate-reset {
+  display: none;
+}

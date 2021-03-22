@@ -1,0 +1,8 @@
+.locator {
+  position: fixed;
+  left: 45px;
+  top: 5px;
+  height: 30px;
+  width: 250px;
+  border: 1px solid #000;
+}
