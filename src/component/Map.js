@@ -1,14 +1,16 @@
-import React, { useEffect } from 'react'
+import React, { useContext, useEffect } from 'react'
 import styles from './Map.module.css'
-import Basemap from 'nyc-lib/nyc/ol/Basemap'
+import { AppContext } from '../App'
 
 export default function Map() {
+  const [appContext, setAppContext] = useContext(AppContext)
+
   useEffect(() => {
-    console.warn("use effect called")
-    new Basemap({target: 'map'})
+    const map = appContext.map;
+    map.setTarget(document.getElementById('map'))
   }) 
 
-   return (
+   return ( 
     <div className={styles.map} id='map'></div>
   )
 }

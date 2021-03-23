@@ -1,15 +1,19 @@
 
-import React from 'react';
+import React, { useState } from 'react';
 import Map from './component/Map'
 import Locator from './component/Locator'
+import Basemap from 'nyc-lib/nyc/ol/Basemap'
 
-function App() {
+export const AppContext = React.createContext() 
+
+export default function App() {
+  const [appContext, setAppContext] = useState({map: new Basemap({})}) 
   return (
-    <div>
-      <Map />
-      <Locator />
-    </div>
+      <AppContext.Provider value={[appContext, setAppContext]}>
+      <div>
+        <Map />
+        <Locator />
+      </div>
+    </AppContext.Provider>
   );
 }
-
-export default App;
