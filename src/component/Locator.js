@@ -1,12 +1,11 @@
 import { useReducer, useContext } from 'react'
-import styles from './Locator.module.css'
+import './Locator.css'
 import Geoclient from 'nyc-lib/nyc/Geoclient'
 import { AppContext } from '../App'
 
 export default function Locator() {
   const [appContext, setAppContext] = useContext(AppContext)
-  const map = appContext.map;
-
+  
   const geocoder = new Geoclient({
     url: 'https://maps.nyc.gov/geoclient/v1/search.json?app_key=74DF5DB1D7320A9A2&app_id=nyc-lib-example'
   })
@@ -21,6 +20,8 @@ export default function Locator() {
   }
   
   function located(location) {
+    const map = appContext.map;
+
     map.getView().animate({center: location.coordinate, zoom: 16})
   }
   
@@ -30,6 +31,6 @@ export default function Locator() {
   
   const [state, dispatch] = useReducer(search, {})
   return (
-    <input className={styles.locator} type="text" onKeyUp={(evt) => dispatch({event: evt})} placeholder="Search for a location..."></input>
+    <input className='locator' type="text" onKeyUp={(evt) => dispatch({event: evt})} placeholder="Search for a location..."></input>
   )
 }

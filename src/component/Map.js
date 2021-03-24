@@ -1,5 +1,5 @@
 import React, { useContext, useEffect } from 'react'
-import styles from './Map.module.css'
+import'./Map.css'
 import { AppContext } from '../App'
 
 export default function Map() {
@@ -7,10 +7,13 @@ export default function Map() {
 
   useEffect(() => {
     const map = appContext.map;
+
+    // cheat little bit here to display map full screem
+    map.getView().setZoom(10)
     map.setTarget(document.getElementById('map'))
   }) 
 
    return ( 
-    <div className={styles.map} id='map'></div>
+    <div className='map' id='map'></div>
   )
 }
